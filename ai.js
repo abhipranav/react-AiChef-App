@@ -40,7 +40,7 @@ export async function getRecipeFromMistral(ingredientsArr) {
                     { role: 'system', content: SYSTEM_PROMPT },
                     { role: 'user', content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` }
                 ],
-                max_tokens: 1024
+                max_tokens: 3000
             })
         })
         if (!res.ok) {

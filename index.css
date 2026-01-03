@@ -115,3 +115,124 @@ ul.ingredients-list > li {
 .suggested-recipe-container ul li, .suggested-recipe-container ol li {
     margin-bottom: 8px;
 }
+
+/* Markdown styling for ReactMarkdown */
+.suggested-recipe-container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #141413;
+}
+
+.suggested-recipe-container h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #141413;
+}
+
+.suggested-recipe-container h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    color: #141413;
+}
+
+.suggested-recipe-container h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #141413;
+}
+
+.suggested-recipe-container p { 
+    margin-bottom: 1em;
+}
+
+.suggested-recipe-container ul, .suggested-recipe-container ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.suggested-recipe-container ul {
+    list-style-type: disc;
+}
+
+.suggested-recipe-container ol {
+    list-style-type: decimal;
+}
+
+.suggested-recipe-container blockquote {
+    border-left: 4px solid #D17557;
+    padding-left: 1em;
+    margin: 1em 0;
+    color: #6B7280;
+    font-style: italic;
+    background-color: #F9FAFB;
+    padding: 0.75em 1em;
+    border-radius: 4px;
+}
+
+.suggested-recipe-container hr {
+    border: none;
+    border-top: 2px solid #E5E7EB;
+    margin: 1.5em 0;
+}
+
+.suggested-recipe-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.95rem;
+}
+
+.suggested-recipe-container table th {
+    background-color: #F3F4F6;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75em;
+    border: 1px solid #D1D5DB;
+}
+
+.suggested-recipe-container table td {
+    padding: 0.75em;
+    border: 1px solid #E5E7EB;
+}
+
+.suggested-recipe-container table tr:nth-child(even) {
+    background-color: #F9FAFB;
+}
+
+.suggested-recipe-container code {
+    background-color: #F3F4F6;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.suggested-recipe-container pre {
+    background-color: #F3F4F6;
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.suggested-recipe-container pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.suggested-recipe-container strong {
+    font-weight: 600;
+    color: #141413;
+}
+
+.suggested-recipe-container em {
+    font-style: italic;
+}

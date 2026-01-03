@@ -1,8 +1,13 @@
-export default function ClaudeRecipe({aiRecipe}) {
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+export default function ClaudeRecipe({recipe}) {
     return (
-        <>
-            {aiRecipe}
-        </>
+        <section className="suggested-recipe-container">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>            
+                {recipe}            
+            </ReactMarkdown>
+        </section>
     )
 }
 

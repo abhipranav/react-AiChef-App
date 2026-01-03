@@ -3,32 +3,15 @@ import IngredientsList from "./components/IngredientsList"
 import ClaudeRecipe from "./components/ClaudeRecipe"
 import { getRecipeFromMistral } from "./ai"
 
-/**
- * Challenge: Get a recipe from the AI!
- * 
- * This will be a bit harder of a challenge that will require you
- * to think critically and synthesize the skills you've been
- * learning and practicing up to this point.
- * 
- * Using either the `getRecipeFromChefClaude` function or the 
- * `getRecipeFromMistral` function, make it so that when the user
- * clicks "Get a recipe", the text response from the AI is displayed
- * in the <ClaudeRecipe> component.
- * 
- * For now, just have it render the raw markdown that the AI returns,
- * don't worry about making it look nice yet. (We're going to use a
- * package that will render the markdown for us soon.)
- */
 
 export default function Main() {
-    const [ingredients, setIngredients] = React.useState(
-        ["all the main spices", "pasta", "ground beef", "tomato paste"]
-    )
-    const [recipeShown, setRecipeShown] = React.useState(false)
+    const [ingredients, setIngredients] = React.useState(["potato","green chutney","refined flour","ajwain","mangrela","onion","curd","all indian spices"])
+    const [recipe, setRecipe] = React.useState(false)
 
     async function getRecipe() {
         const recipeMd = await getRecipeFromMistral(ingredients)
         console.log(recipeMd)
+        setRecipe(recipeMd)
     }
     
     function addIngredient(formData) {
@@ -44,8 +27,9 @@ export default function Main() {
                     placeholder="e.g. oregano"
                     aria-label="Add ingredient"
                     name="ingredient"
+                    required
                 />
-                <button>Add ingredient</button>
+                <button type="submit">Add ingredient</button>
             </form>
 
             {ingredients.length > 0 &&
@@ -55,9 +39,9 @@ export default function Main() {
                 />
             }
 
-            {recipeShown && 
+            {recipe && 
             <ClaudeRecipe 
-                aiRecipe = {aiRecipe}
+                recipe = {recipe}
             />}
         </main>
     )
