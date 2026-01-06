@@ -6,7 +6,16 @@ import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(["potato","green chutney","refined flour","ajwain","mangrela","onion","curd","all indian spices"])
-    const [recipe, setRecipe] = React.useState(false)
+    const [recipe, setRecipe] = React.useState("")
+
+    const recipeSection = React.useRef(null)
+    console.log(recipeSection)
+
+    React.useEffect(() => {
+        if(recipe !== "" && recipeSection !== null) {
+            recipeSection.current.scrollIntoView({behavior:"smooth"})
+        }
+    }, [recipe])
 
     async function getRecipe() {
         const recipeMd = await getRecipeFromMistral(ingredients)
@@ -34,6 +43,7 @@ export default function Main() {
 
             {ingredients.length > 0 &&
                 <IngredientsList
+                    ref={recipeSection}
                     ingredients={ingredients}
                     getRecipe={getRecipe}
                 />
